@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}
+liste des plats
+{% endblock %}
+{% block body %}
+  <h1>Liste des plats</h1>
+  <ul>
+    {% for plat in plats %}
+      <li>{{ plat }} - 
+        <a href="{% url 'plat-detail' plat.id %}">Détails</a>
+         <a href="{% url 'plat-update' plat.id %}">Modifier</a>
+          <a href="{% url 'plat-delete' plat.id %}">Supprimer</a>
+      </li>
+      {% empty %}
+      <h2>Aucun plat n'est enregistré </h2><br>
+    {% endfor %}
+  </ul>
+{% endblock %}

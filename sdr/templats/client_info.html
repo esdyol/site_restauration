@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+page de client
+{% endblock %}
+
+{% block body %}
+
+<ul>
+    <p>les informations du client pour la reservation</p>
+    {% for info in client %}
+    <li>
+        <h1>{{info.user}}</h1>
+        {{info.telephone}}
+        <p>{{info.adresse}}</p>
+    </li>
+    {% empty %}
+    <h3>Aucun client n'est enregistré</h3>
+    {% endfor %}
+</ul>
+{% endblock %}

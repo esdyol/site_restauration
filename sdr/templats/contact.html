@@ -1,0 +1,24 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Contact{% endblock %}
+{% block content %}
+<section class="contact" id="contact">
+  <h2>Contactez-nous</h2>
+  <div class="contact-content">
+    <div class="contact-infos">
+      <p><strong>Email :</strong> contact@restaurantpro.com</p>
+      <p><strong>Téléphone :</strong> +228 00 00 00 00</p>
+      <p><strong>Adresse :</strong> Avenue Gourmet, Cotonou, Bénin</p>
+    </div>
+    <div class="contact-form">
+      <h3>Laissez-nous un message</h3>
+      <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Envoyer</button>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}

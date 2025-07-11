@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}
+details-d'une-table
+{% endblock %}
+
+{% block body %}
+    <h2>Détail de la table</h2>
+    <p><strong>Numéro:</strong> {{ band.numero }}</p>
+    <p><strong>Capacité:</strong> {{ band.capacite }}</p>
+    <a href="{% url 'table-liste' %}">Retour</a>
+{% endblock %}

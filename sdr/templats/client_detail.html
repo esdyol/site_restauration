@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+detail_du_client
+{% endblock %}
+
+{% block body %}
+<h2>Détail du client</h2>
+<p><strong>Prenom:</strong> {{band.user.first_name }}</p>
+<p><strong>Nom:</strong> {{band.user.last_name }}</p>
+<p><strong>Email:</strong> {{band.user.email }}</p>
+<p><strong>Adresse:</strong> {{band.adresse }}</p>
+<p><strong>Telephone:</strong> {{band.telephone }}</p>
+<p><strong>Nom d'utilisateur:</strong> {{band.user }}</p>
+<p><strong>Mot de passe:</strong> {{band.user.password }}</p>
+<a href="{% url 'client' %}">Retour</a>
+{% endblock %}

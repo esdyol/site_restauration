@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}
+enregistrer-une-table
+{% endblock %}
+
+{% block body %}
+    <h2>Formulaire Table</h2>
+    <form method="post">
+        {% csrf_token %}{{ form.as_p }}
+        <button type="submit">Enregistrer</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+page de reservation
+{%endblock%}
+
+{% block content %}
+<ul>
+    <p>la liste des reservations :</p>
+    {% for item in reserver %}
+    <li>
+        <h3>{{item.date}}</h3>
+        <h3>{{item.heure}}</h3>
+        <h3>{{item.nombre_personne}}</h3>
+    </li>
+    {% empty %}
+    <h2>aucune reservation n'a ete faite</h2>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+liste_des_clients
+{% endblock %}
+
+{% block body %}
+<h1>Liste des clients</h1>
+<ul>
+  {% for client in band %}
+  <li>{{ client.user }} - 
+    <a href="{% url 'client-detail' client.id %}">Détails</a>
+     <a href="{% url 'client-delete' client.id %}">supprimer</a>
+  </li>
+  {% empty %}
+  <h2>aucun client n'est enregistré</h2>
+  {% endfor %}
+</ul>
+ <a href="{% url 'client-create' %}">modifier</a>
+{% endblock %}

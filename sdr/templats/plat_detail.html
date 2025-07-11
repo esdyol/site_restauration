@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}
+voir-plat
+{% endblock %}
+
+{% block body %}
+    <h2>Détail du plat</h2>
+    <p><strong>Nom:</strong> {{ band.nom }}</p>
+    <p><strong>Prix:</strong> {{ band.prix }}</p>
+    <p><strong>description:</strong> {{ band.description }}</p>
+    <p>
+        <strong>image:</strong>
+        <img src="{{ band.image.url }}">
+    </p>
+    <p><strong>categories:</strong> {{ band.categories }}</p>
+    <a href="{% url 'plat-liste' %}">Retour</a>
+{% endblock %}

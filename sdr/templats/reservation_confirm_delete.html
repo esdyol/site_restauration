@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}
+supprimer-une-reservation
+{% endblock %}
+
+{% block body %}
+    <h2>Supprimer la réservation</h2>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirmer</button>
+    </form>
+{% endblock %}

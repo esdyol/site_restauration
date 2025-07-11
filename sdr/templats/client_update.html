@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+modifier _des_clients
+{% endblock %}
+
+{% block body %}
+<h2>Modifier Client</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Enregistrer</button>
+</form>
+{% endblock %}

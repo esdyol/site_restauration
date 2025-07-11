@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+Detail sur une reservation
+{% endblock %}
+
+{% block body %}
+    <h2>Détail de la réservation</h2>
+    <p>
+        <strong>Date: {{ band.date }} à {{ band.heure }}</strong>
+         {{ band.user }}
+         <p><strong>Prenom:</strong> {{band.client.user.first_name }}</p>
+        <p><strong>Nom:</strong> {{band.client.user.last_name }}</p>
+        <p><strong>Email:</strong> {{band.client.user.email }}</p>
+        <p><strong>Adresse:</strong> {{band.client.adresse }}</p>
+        <p><strong>Telephone:</strong> {{band.client.telephone }}</p>
+        <p><strong>Nom d'utilisateur:</strong> {{band.client.user }}</p>
+        <p><strong>Mot de passe:</strong> {{band.client.user.password }}</p>
+       
+    </p>
+    <a href="{% url 'reservation-liste' %}">Retour</a>
+{% endblock %}

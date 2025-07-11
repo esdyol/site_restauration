@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+supprimer-un-client
+{% endblock %}
+
+{% block body %}
+<h2>Supprimer le client</h2>
+<p>Confirmer la suppression ?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Oui</button>
+</form>
+{% endblock %}

@@ -1,0 +1,36 @@
+
+{% extends 'base1.html' %}
+{% load static %}
+{% block title %}Accueil{% endblock %}
+{% block content %}
+<header class="hero" id="accueil">
+  <div class="overlay">
+    <h1>Restaurant Pro</h1>
+    <p>Une expérience culinaire inoubliable</p>
+  </div>
+</header>
+
+<section class="welcome">
+  <h2>Bienvenue chez Restaurant Pro</h2>
+  <p>Nous vous accueillons dans une ambiance chaleureuse avec des repas raffinés et gourmands.</p>
+</section>
+
+<section class="menu" id="menu">
+  <h2>Notre Menu</h2>
+  <div class="menu-grid">
+    {% for plat in plats %}
+    <div class="menu-card">
+      {% if plat.image %}
+        <img src="{{plat.image.url}}">
+      {% else %}
+        <h2>NO IMAGE </h2>
+      {% endif %}
+      <div class="card-content">
+        <h3>{{ plat.nom }}</h3>
+        <span>{{ plat.prix }} FCFA</span>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

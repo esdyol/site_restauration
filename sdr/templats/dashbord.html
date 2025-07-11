@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+    <h1>Tableau de bord - Administrateur</h1>
+
+    <!-- Statistiques générales -->
+    <table border="1" width="100%" cellpadding="10">
+        <tr style="background-color: #f2f2f2;">
+            <th colspan="2">Statistiques Générales</th>
+        </tr>
+        <tr>
+            <td><strong>Réservations aujourd’hui :</strong></td>
+            <td>{{ total_reservations_today }}</td>
+        </tr>
+        <tr>
+            <td><strong>Nombre total de clients :</strong></td>
+            <td>{{ total_clients }}</td>
+        </tr>
+        <tr>
+            <td><strong>Plats au menu :</strong></td>
+            <td>{{ total_plats }}</td>
+        </tr>
+    </table>
+
+    <br>
+
+<!-- Réservations récentes -->
+    <table border="1" width="100%" cellpadding="10">
+        <tr style="background-color: #f2f2f2;">
+            <th colspan="5">Dernières Réservations</th>
+        </tr>
+        <tr>
+            <th>Client</th>
+            <th>Date</th>
+            <th>Heure</th>
+            <th>Nombre de personnes</th>
+            <th>Table</th>
+        </tr>
+        {% for reservation in reservations_recentes %}
+        <tr>
+            <td>{{ reservation.client.user.username }}</td>
+            <td>{{ reservation.date }}</td>
+            <td>{{ reservation.heure }}</td>
+            <td>{{ reservation.nombre_personne }}</td>
+            <td>{{ reservation.table.numero }}</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="5">Aucune réservation récente</td></tr>
+        {% endfor %}
+    </table>
+
+    <br>
+
+<!-- Meilleurs plats -->
+    <table border="1" width="100%" cellpadding="10">
+        <tr style="background-color: #f2f2f2;">
+            <th colspan="2">Plats populaires</th>
+        </tr>
+        {% for plat in plats_populaires %}
+        <tr>
+            <td>{{ plat.nom }}</td>
+            <td>{{ plat.nombre_commandes }} commandes</td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="2">Aucun plat commandé pour le moment</td></tr>
+        {% endfor %}
+    </table>
+
+    <!-- liste des client -->
+    <table border="1" width="100%" cellpadding="10">
+        <tr style="background-color: #f2f2f2;">
+            <th colspan="6">liste des clients</th>
+        </tr>
+        {% for client in liste_client %}
+        <tr>
+            <th>clients</th>
+            <td>{{ client.user.username }}</td>
+            
+        </tr>
+        {% empty %}
+        <tr><td colspan="6">Aucun client pour le moment</td></tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

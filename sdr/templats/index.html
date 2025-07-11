@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Restaurant Pro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a id="top"></a>
+<!-- <nav class="navbar">
+  <ul>
+    <li><a href="#accueil">Accueil</a></li>
+    <li><a href="#apropos">À propos</a></li>
+    <li><a href="#reservation">Réservation</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#temoignages">Temoignages</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#connexion">Connexion</a></li>
+    <li><a href="#connexion">S'Inscription</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="panier" onclick="afficherPanier()">
+      🛒 <span id="panier-count">0</span>
+  </div>
+</nav> -->
+
+<nav class="navbar">
+  <!-- Logo -->
+  <div class="nav-left">
+    <img src="images/logo.jpg" alt="Logo" class="logo">
+  </div>
+
+  <!-- Liens de navigation -->
+  <ul class="nav-center">
+    <li><a href="#accueil">Accueil</a></li>
+    <li><a href="#apropos">À propos</a></li>
+    <li><a href="#reservation">Réservation</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#temoignages">Témoignages</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#connexion">Connexion</a></li>
+    <li><a href="#connexion">Inscription</a></li>
+  </ul>
+
+  <!-- Recherche + Panier -->
+  <div class="nav-right">
+    <input type="text" placeholder="Rechercher..." class="search-box">
+    
+    <div class="panier" onclick="afficherPanier()">
+      🛒
+      <span id="panier-count">0</span>
+    </div>
+  </div>
+</nav>
+
+
+<header class="hero" id="accueil">
+    <div class="overlay">
+      <h1>Restaurant Pro</h1>
+      <p>Une expérience culinaire inoubliable</p>
+    </div>
+  </header>
+
+  <section class="welcome">
+    <h2>Bienvenue chez Restaurant Pro</h2>
+    <p>Nous vous accueillons dans une ambiance chaleureuse avec des repas raffinés et gourmands.</p>
+  </section>
+
+  <section class="about" id="apropos">
+    <div class="about-text">
+      <h2>À propos de nous</h2>
+      <p>Restaurant Pro est un établissement haut de gamme qui marie tradition et innovation. Notre chef vous propose des plats inspirés des cuisines du monde entier.</p>
+    </div>
+    <div class="about-img">
+      <img src="images/p1.jpg" alt="Plat de steak">
+    </div>
+  </section>
+
+<section class="reservation-contact" id="reservation">
+  <div class="reservation-container">
+    <!-- Image animée -->
+    <div class="reservation-image">
+      <img src="images/table.jpg" alt="Chef en cuisine animée">
+    </div>
+
+    <!-- Formulaire -->
+    <div class="reservation">
+      <h2>Réserver une table</h2>
+      <form>
+        <input type="text" placeholder="Nom complet" required>
+        <input type="email" placeholder="Email" required>
+        <input type="tel" placeholder="Téléphone" required>
+        <div class="form-row">
+          <input type="date" required>
+          <input type="time" required>
+        </div>
+        <input type="number" placeholder="Nombre de personnes" required>
+        <button type="submit">Réserver</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section" id="contact">
+  <div class="contact-container">
+    <!-- Partie formulaire à gauche -->
+    <div class="contact-left">
+      <h2>Contactez-nous</h2>
+      <div class="contact-infos">
+        <p><strong>Email :</strong> ulrichabeldoho1@gmail.com</p>
+        <p><strong>Téléphone :</strong> +229 01 57 77 55 37</p>
+        <p><strong>Adresse :</strong> Abomey-Calavi , Cotonou, Bénin</p>
+      </div>
+
+      <div class="contact-form">
+        <h3>Laissez-nous un message</h3>
+        <form>
+          <input type="text" placeholder="Votre nom" required>
+          <input type="email" placeholder="Votre email" required>
+          <textarea placeholder="Votre message" rows="4" required></textarea>
+          <button type="submit">Envoyer</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Partie image à droite -->
+    <div class="contact-image">
+      <img src="images/contact.jpg" alt="Contact illustration">
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- ...Menu... -->
+
+<section class="menu" id="menu">
+  <h2>Notre Menu</h2>
+  <div class="menu-grid">
+    <a href="#" class="menu-card">
+      <img src="images/p2.jpg" alt="Spaghetti Bolognaise">
+      <div class="card-content">
+        <h3>Spaghetti Bolognaise</h3>
+        <span>5 000 FCFA</span>
+      <button onclick="ajouterAuPanier('Spaghetti Bolognaise')">Ajouter au panier</button>
+
+      </div>
+    </a>
+    <a href="#" class="menu-card">
+      <img src="images/p3.jpg" alt="Filet de bœuf grillé">
+      <div class="card-content">
+        <h3>Filet de bœuf grillé</h3>
+        <span>8 500 FCFA</span>
+        <button onclick="ajouterAuPanier('Spaghetti Bolognaise')">Ajouter au panier</button>
+      </div>
+    </a>
+    <a href="#" class="menu-card">
+      <img src="images/p4.jpg" alt="Poisson braisé">
+      <div class="card-content">
+        <h3>Poisson braisé</h3>
+        <span>6 000 FCFA</span>
+        <button onclick="ajouterAuPanier('Spaghetti Bolognaise')">Ajouter au panier</button>
+      </div>
+    </a>
+    <a href="#" class="menu-card">
+      <img src="images/p5.jpg" alt="Salade exotique">
+      <div class="card-content">
+        <h3>Salade exotique</h3>
+        <span>4 000 FCFA</span>
+        <button onclick="ajouterAuPanier('Spaghetti Bolognaise')">Ajouter au panier</button>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="menu">
+  <div class="menu-grid">
+    <a href="#" class="menu-card">
+      <img src="images/p4.jpg" alt="Spaghetti Bolognaise">
+      <div class="card-content">
+        <h3>Spaghetti Bolognaise</h3>
+        <span>5 000 FCFA</span>
+        <button onclick="ajouterAuPanier('Spaghetti Bolognaise')">Ajouter au panier</button>
+      </div>
+    </a>
+    <a href="#" class="menu-card">
+      <img src="images/p2.jpg" alt="Filet de bœuf grillé">
+      <div class="card-content">
+        <h3>Filet de bœuf grillé</h3>
+        <span>8 500 FCFA</span>
+        <button onclick="ajouterAuPanier('Spaghetti Bolognaise')">Ajouter au panier</button>
+      </div>
+    </a>
+    <a href="#" class="menu-card">
+      <img src="images/p3.jpg" alt="Poisson braisé">
+      <div class="card-content">
+        <h3>Poisson braisé</h3>
+        <span>6 000 FCFA</span>
+        <button onclick="ajouterAuPanier('Spaghetti Bolognaise')">Ajouter au panier</button>
+      </div>
+    </a>
+    <a href="#" class="menu-card">
+      <img src="images/p5.jpg" alt="Salade exotique">
+      <div class="card-content">
+        <h3>Salade exotique</h3>
+        <span>4 000 FCFA</span>
+        <button onclick="ajouterAuPanier('Spaghetti Bolognaise')">Ajouter au panier</button>
+      </div>
+    </a>
+  </div>
+</section>
+
+
+<section class="testimonials" id="temoignages">
+  <h2>Ce que disent nos clients</h2>
+  <div class="testimonial-cards">
+    <div class="testimonial">
+      <p>"Une expérience culinaire exceptionnelle, plats délicieux et service impeccable !"</p>
+      <h4>— Awa K.</h4>
+    </div>
+    <div class="testimonial">
+      <p>"Ambiance chaleureuse, portions généreuses, je recommande vivement."</p>
+      <h4>— Jean-Paul M.</h4>
+    </div>
+    <div class="testimonial">
+      <p>"Le meilleur poisson braisé de la ville ! Je reviendrai sans hésiter."</p>
+      <h4>— Mireille D.</h4>
+    </div>
+    <div class="testimonial">
+      <p>"Service impeccable, cuisine authentique et hygiène irréprochable. Ce restaurant mérite largement sa réputation."</p>
+      <h4>— Jean-Luc M., Inspecteur culinaire</h4>
+    </div>
+    <div class="testimonial">
+      <p>"Service impeccable, cuisine authentique et hygiène irréprochable. Ce restaurant mérite largement sa réputation."</p>
+      <h4>— Jean-Luc M., Inspecteur culinaire</h4>
+    </div>
+    <div class="testimonial">
+      <p>"Service impeccable, cuisine authentique et hygiène irréprochable. Ce restaurant mérite largement sa réputation."</p>
+      <h4>— Jean-Luc M., Inspecteur culinaire</h4>
+    </div>
+  </div>
+  </div>
+</section>
+
+<section class="auth-section" id="connexion">
+  <div class="auth-container">
+    <!-- Formulaire Connexion -->
+    <div class="auth-box" id="login-box">
+      <h2>Connexion</h2>
+      <form class="auth-form">
+        <div class="input-group">
+          <input type="email" required>
+          <label>Email</label>
+        </div>
+        <div class="input-group">
+          <input type="password" required>
+          <label>Mot de passe</label>
+        </div>
+        <button type="submit">Se connecter</button>
+      </form>
+      <p class="toggle-link">Pas encore de compte ? <a href="#" onclick="showSignup(event)">Créer un compte</a></p>
+    </div>
+
+    <!-- Formulaire Inscription -->
+    <div class="auth-box hidden" id="signup-box">
+      <h2>Créer un compte</h2>
+      <form class="auth-form">
+        <div class="input-group">
+          <input type="text" required>
+          <label>Nom complet</label>
+        </div>
+        <div class="input-group">
+          <input type="email" required>
+          <label>Email</label>
+        </div>
+        <div class="input-group">
+          <input type="password" required>
+          <label>Mot de passe</label>
+        </div>
+        <div class="input-group">
+          <input type="password" required>
+          <label>Confirmer le mot de passe</label>
+        </div>
+        <button type="submit">Créer un compte</button>
+      </form>
+      <p class="toggle-link">Déjà inscrit ? <a href="#" onclick="showLogin(event)">Connexion</a></p>
+    </div>
+    <div class="auth-image">
+      <img src="images/contact.jpg" alt="Connexion Illustration">
+    </div>
+  </div>
+</section>
+
+<!-- Retour en haut -->
+<a href="#top" class="back-to-top" title="Retour en haut">
+  &#8679;
+</a>
+
+<!-- Pieds de page -->
+<footer>
+  <p>&copy; 2025 Restaurant Pro. Tous droits réservés.</p>
+  <p><a href="#">Mentions légales</a> | <a href="#">Politique de confidentialité</a></p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

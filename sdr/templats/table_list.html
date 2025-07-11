@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+
+{% block title %}
+liste-des-tables
+{% endblock %}
+
+{% block body %}
+  <h1>Liste des tables</h1>
+  <a href="{% url 'table-create' %}">Ajouter une table</a>
+  <ul>
+    {% for table in tables %}
+      <li>{{ table }} - 
+        <a href="{% url 'table-detail' table.id %}">Détails</a>
+        <a href="{% url 'table-update' table.id %}">Modifier</a>
+        <a href="{% url 'table-delete' table.id %}">Supprimer</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
